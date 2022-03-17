@@ -1,37 +1,27 @@
 import React, { useState } from "react";
-import { useParams } from "react-router";
-import products from "./../data/products.json";
-import facebook from "./../facebook.png";
-import like from "./../like-comment.png";
-import "./read.css";
-import Create from "./Create";
+import facebook from "./../../facebook.png";
+import like from "./../../like-comment.png";
 
-const Read = (props) => {
-  const [showCreate, setShowCreate] = useState(false);
-  const { id } = useParams();
 
-  const { isTrue, toggle, facebookAds } = props;
+const Update = (props) => {
 
-  const product = products.products.filter((element) => element.id === id);
+  const { facebookAds, deleteAd } = props;
 
-  const handleOnClick = () => {
-    console.log("onclick");
-    setShowCreate(!showCreate);
-    toggle();
+  
+
+  const handleDelete = (id) => {
+    deleteAd(id);
+    console.log("faaaaacebokads", facebookAds);
   };
-  console.log("isTrue", isTrue);
-  console.log("toggle", toggle);
-  console.log("facebookAds", facebookAds);
 
-  const productAds = facebookAds.filter((ad) => ad.productId === id);
-  //   const shortDesc = product[0].productDescription.substring(0, 45) + " ...";
-  console.log("estos addssssssssssssssssssssssss", productAds);
+  
+
   return (
-    <>
-      {productAds.map((ad) => {
+    <div>
+      {facebookAds.map((ad) => {
         const shortDesc = ad.description.substring(0, 45) + " ...";
         return (
-          <div>
+          <div key={ad.id} onClick={() => handleDelete(ad.id)}>
             <div className="ad">
               <div className="top">
                 <div className="head">
@@ -55,15 +45,12 @@ const Read = (props) => {
                 alt="facebook-like-comment"
                 className="like-img"
               />
-              <div></div>
             </div>
-            <button onClick={handleOnClick}>Create new ad</button>
-            {showCreate && <Create />}
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 
-export default Read;
+export default Update;

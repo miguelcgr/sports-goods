@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
-import data from "./../data/products.json"; 
+import data from "../../data/products.json";
 
 const Index = () => {
   console.log("index");
@@ -10,22 +10,24 @@ const Index = () => {
 
   return (
     <div className="index">
-    <div className='header'>
-      <h1>{data.name}</h1>
-      <img className="logo" src={data.logo} alt={"store-logo"} />
-      </div>
+      <div className="header"></div>
       <div className="products">
         {data.products.map((el, index) => {
           return (
-            
-            <Link to={`/read/${el.id}`} product={el} className='link' key={index}>
+            <Link
+              to={`/read/${el.id}`}
+              product={el}
+              className="link"
+              key={index}
+            >
               <div className="product-card">
-                <p className='product-name'>{el.productName}</p>
-                <p>{el.price}</p>
-                <p className='product-desc'>{el.productDescription}</p>
+                <div className="first-line">
+                  <p className="product-name">{el.productName}</p>
+                  <p className="price">{el.price} €</p>
+                </div>
+                <p className="product-desc">{el.productDescription}</p>
               </div>
             </Link>
-         
           );
         })}
       </div>

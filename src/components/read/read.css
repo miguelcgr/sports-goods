@@ -1,10 +1,14 @@
+.read-container{
+    display: flex;
+    flex-wrap: wrap;
+}
 .facebook-text{
     color: #3b5998;
     font-weight: 600;
     font-size: 1em;
 }
 body{
-    background:rgb(248, 238, 196)
+background-color:#F8FFE5 ;
 }
 h1{
     font-size: 2em;
@@ -17,9 +21,9 @@ h1{
     height: 7em;
 }
 .ad{
-    border: 1px solid gray;
+    border: 1px solid rgb(197, 197, 197);
     background-color: white;
-    width: 30%;
+    width: 25vw;
 }
 .head{
     display:flex;
@@ -52,14 +56,11 @@ h1{
     padding-left:1em;
     padding-right:2em;
     background-color: rgb(236, 236, 236);
+    
     height: 6rem;
 }
-.under-text{
-
-}
-
-button{
-    background-color:rgb(206, 206, 206);
+.buy-button{
+    background-color:rgb(206, 206, 206); 
     border-radius: 10%;
     border: none;
     height:3em;

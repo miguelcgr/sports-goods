@@ -1,5 +1,6 @@
 body{
-    background-color: rgb(211, 211, 211);
+    margin-top: 9vh;
+   
 }
 .header{
    display: flex; 
@@ -28,6 +29,10 @@ h1{
     color: #777;
     font-size: 2.5rem;
 }
+.price{
+    font-size: 1.5rem;
+    color: #777;
+}
 .product-desc{
     
     display: flex;
@@ -39,9 +44,7 @@ h1{
 }
  .product-card {
     padding: 1em;
-    
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  
     margin: 1rem 1em;
     height: 25%;
     width: 80%;   
@@ -49,13 +52,15 @@ h1{
     justify-content: center;
     text-decoration: none;
    background-color: white;;
-
 } 
+.first-line{
+display: flex;
+align-items: center;
+}
 
 .product-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
   }
-
 .product-img{
     width: 15em;
 }
