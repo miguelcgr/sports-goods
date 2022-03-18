@@ -1,54 +1,52 @@
-h2{
-    color: #2EBFA5;
-    margin: auto;
+h2 {
+  color: #2ebfa5;
+  margin: auto;
 }
 .form-container {
   display: flex;
   align-items: center;
   height: 70vh;
-
 }
 form {
   display: flex;
   flex-direction: column;
   width: 30vw;
   margin: auto;
-  border: 3px solid #2EBFA5;
+  border: 3px solid #2ebfa5;
   border-radius: 1em;
   padding: 2em;
-
 }
 input {
   background-color: rgb(219, 219, 219);
   border: 1px solid gray;
-  
+
   height: 2em;
   width: 80%;
   margin: auto;
   margin-top: 1em;
-  }
-select{
-    background-color: rgb(219, 219, 219);
-    border: 1px solid gray;
-    height: 2em;
-    width: 82%;
-    margin: auto;
-    margin-top: 1em;
 }
-.create-button{
-    background-color: #2EBFA5;
-    border: 1px solid gray;
-    border-radius: 0.5em;
-    height: 4em;
-    width: 82%;
-    margin: auto;
-    margin-top: 1em;
-    font-size: 1em;
+select {
+  background-color: rgb(219, 219, 219);
+  border: 1px solid gray;
+  height: 2em;
+  width: 82%;
+  margin: auto;
+  margin-top: 1em;
 }
-.create-button:hover{
-    font-weight: 800;
+.create-button {
+  background-color: #2ebfa5;
+  border: 1px solid gray;
+  border-radius: 0.5em;
+  height: 4em;
+  width: 82%;
+  margin: auto;
+  margin-top: 1em;
+  font-size: 1em;
 }
-.create-button:active{
+.create-button:hover {
+  font-weight: 800;
+}
+.create-button:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }

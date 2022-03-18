@@ -15,7 +15,8 @@ const Delete = (props) => {
       {facebookAds.map((ad) => {
         const shortDesc = ad.description.substring(0, 45) + " ...";
         return (
-          <div key = {ad.id}
+          <div
+            key={ad.id}
             className="ad-delete"
             onClick={() => {
               if (

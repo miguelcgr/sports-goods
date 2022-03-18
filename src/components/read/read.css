@@ -1,73 +1,72 @@
-.read-container{
-    display: flex;
-    flex-wrap: wrap;
+.read-container {
+  display: flex;
+  flex-wrap: wrap;
 }
-.facebook-text{
-    color: #3b5998;
-    font-weight: 600;
-    font-size: 1em;
+.facebook-text {
+  color: #3b5998;
+  font-weight: 600;
+  font-size: 1em;
 }
-body{
-background-color:#F8FFE5 ;
+body {
+  background-color: #f8ffe5;
 }
-h1{
-    font-size: 2em;
+h1 {
+  font-size: 2em;
 }
-.product-img{
-    width: 100%;
-    margin-bottom: -1%;
+.product-img {
+  width: 100%;
+  margin-bottom: -1%;
 }
-.top{
-    height: 7em;
+.top {
+  height: 7em;
 }
-.ad{
-    border: 1px solid rgb(197, 197, 197);
-    background-color: white;
-    width: 25vw;
+.ad {
+  border: 1px solid rgb(197, 197, 197);
+  background-color: white;
+  width: 25vw;
 }
-.head{
-    display:flex;
-    align-items: center;
-    display: flex;
+.head {
+  display: flex;
+  align-items: center;
+  display: flex;
 }
-.product-intro{
-    margin-left: 1em;
+.product-intro {
+  margin-left: 1em;
 }
-.gray-link{
-    color: gray;
-    font-size: 1em;
+.gray-link {
+  color: gray;
+  font-size: 1em;
 }
-.info-title{
-    font-weight: 600;
+.info-title {
+  font-weight: 600;
 }
-.ad-desc{
-    color: gray;
-    font-size: 1em;
-    margin-top: -1em;
+.ad-desc {
+  color: gray;
+  font-size: 1em;
+  margin-top: -1em;
 }
-.like-img{
-    width: 100%;
+.like-img {
+  width: 100%;
 }
-.under-info{
-    margin:0;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left:1em;
-    padding-right:2em;
-    background-color: rgb(236, 236, 236);
-    
-    height: 6rem;
+.under-info {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1em;
+  padding-right: 2em;
+  background-color: rgb(236, 236, 236);
+
+  height: 6rem;
 }
-.buy-button{
-    background-color:rgb(206, 206, 206); 
-    border-radius: 10%;
-    border: none;
-    height:3em;
-    width: 6em;
-    font-weight:500;
+.buy-button {
+  background-color: rgb(206, 206, 206);
+  border-radius: 10%;
+  border: none;
+  height: 3em;
+  width: 6em;
+  font-weight: 500;
 }
-.buy-button:active{
-    transform: scale(0.95);
-   
+.buy-button:active {
+  transform: scale(0.95);
 }

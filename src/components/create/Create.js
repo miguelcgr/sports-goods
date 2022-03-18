@@ -28,7 +28,7 @@ const Create = (props) => {
       <form onSubmit={handleSubmit}>
         <h2>Create an ad for your products</h2>
 
-         <input
+        <input
           type="text"
           name="name"
           placeholder="Product name"
@@ -48,23 +48,23 @@ const Create = (props) => {
           onChange={(event) => setImage(event.target.value)}
         />
 
-       <input
+        <input
           type="text"
           name="price"
           placeholder="Product price"
           onChange={(event) => setPrice(event.target.value)}
         />
-     
+
         <input
           type="text"
           name="web"
-          placeholder= "Advertisement URL"
+          placeholder="Advertisement URL"
           onChange={(event) => setWebsite(event.target.value)}
         />
-      
+
         {/* <select onChange={(event) => setProduct(event.target.value)}> */}
         <select onChange={(event) => handleProductSelection(event)}>
-          <option defaultValue  hidden>
+          <option defaultValue hidden>
             Choose which product you are advertising
           </option>
           {products.products.map((product, index) => {
@@ -75,7 +75,9 @@ const Create = (props) => {
             );
           })}
         </select>
-        <button className="create-button" type="submit">Create</button>
+        <button className="create-button" type="submit">
+          Create
+        </button>
       </form>
 
       <br />
