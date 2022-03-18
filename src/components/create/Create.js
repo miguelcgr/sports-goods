@@ -23,8 +23,6 @@ const Create = (props) => {
     insertNewAd(name, description, image, price, website, productId);
   };
 
-  console.log("create -- products", products);
-
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
@@ -66,7 +64,7 @@ const Create = (props) => {
       
         {/* <select onChange={(event) => setProduct(event.target.value)}> */}
         <select onChange={(event) => handleProductSelection(event)}>
-          <option selected disabled hidden>
+          <option defaultValue  hidden>
             Choose which product you are advertising
           </option>
           {products.products.map((product, index) => {
