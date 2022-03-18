@@ -2,7 +2,6 @@
 
 Manage your facebook ads for your online shop.
 
-## Available Scripts
 
 The app has a navbar with several views. 
 The main view is the Index view, here the user can see a list of all the products in their store. By clicking on the product the user will navigate to the Read view where the ads of that specific product are shown.
