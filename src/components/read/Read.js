@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router";
-import products from "../../data/products.json";
 import facebook from "./../../facebook.png";
 import like from "./../../like-comment.png";
 import "./read.css";
@@ -14,10 +13,10 @@ const Read = (props) => {
 
   return (
     <>
-      {productAds.map((ad) => {
+      {productAds.map((ad, index) => {
         const shortDesc = ad.description.substring(0, 45) + " ...";
         return (
-          <div className="read-container">
+          <div key={index} className="read-container">
             <div className="ad">
               <div className="top">
                 <div className="head">

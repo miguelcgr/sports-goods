@@ -38,7 +38,7 @@ const Update = (props) => {
                   <p className="info-title">Check out our {ad.name}</p>
                   <p className="ad-desc">{shortDesc}</p>
                 </div>
-                <button>Buy now</button>
+                <button className="buy-button">Buy now</button>
               </div>
               <img
                 src={like}

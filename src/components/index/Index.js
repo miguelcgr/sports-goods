@@ -4,10 +4,6 @@ import "./index.css";
 import data from "../../data/products.json";
 
 const Index = () => {
-  console.log("index");
-  console.log("helloindeXXX");
-  console.log("index products", data);
-
   return (
     <div className="index">
       <div className="header"></div>
@@ -36,19 +32,3 @@ const Index = () => {
 };
 
 export default Index;
-//     {/* <div className="cards">
-//     {products.map((product) => (
-//       <div className="product-card">
-//         <h2>{product.name}</h2>
-//         <button onClick={() => handleAddClick(product._id)}>
-//           <img
-//             className="product-img"
-//             src={product.picture}
-//             alt="product pic"
-//           />
-//         </button>
-//         <h3>{product.price} €</h3>
-//         <h4>{product.description}</h4>
-//       </div>
-//     ))}
-//   </div> */

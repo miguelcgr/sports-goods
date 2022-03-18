@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import facebook from "./../../facebook.png";
 import like from "./../../like-comment.png";
 import "./delete.css";
@@ -7,7 +7,6 @@ const Delete = (props) => {
 
   const handleDelete = (id) => {
     deleteAd(id);
-    console.log("faaaaacebokads", facebookAds);
   };
 
   return (

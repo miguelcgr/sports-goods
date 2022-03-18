@@ -8,21 +8,21 @@ const Navbar = () => {
     <div className="navbar">
       <div className="store-info">
         <img className="nav-logo" src={data.logo} alt={"store-logo"} />
-        <Link to={"/"}  className="link">
+        <Link to={"/"} className="link">
           {data.name}
         </Link>
       </div>
       <div className="nav-links">
-        <NavLink to={"/"} activeClassName="active" className="link">
+        <NavLink to={"/"} activeclassname="active" className="link">
           Index
         </NavLink>
-        <NavLink to={"/create"} activeClassName="active" className="link">
+        <NavLink to={"/create"} activeclassname="active" className="link">
           Create
         </NavLink>
-        <NavLink to={"/update"} activeClassName="active" className="link">
+        <NavLink to={"/update"} activeclassname="active" className="link">
           Update
         </NavLink>
-        <NavLink to={"/delete"} activeClassName="active" className="link">
+        <NavLink to={"/delete"} activeclassname="active" className="link">
           Delete
         </NavLink>
       </div>

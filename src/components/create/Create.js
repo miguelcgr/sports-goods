@@ -23,7 +23,7 @@ const Create = (props) => {
     insertNewAd(name, description, image, price, website, productId);
   };
 
-  console.log("products", products);
+  console.log("create -- products", products);
 
   return (
     <div className="form-container">
