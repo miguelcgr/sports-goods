@@ -11,11 +11,12 @@ const Delete = (props) => {
 
   return (
     <div className="ad-container">
+    <p>Click on an ad to delete it</p>
       {facebookAds.map((ad) => {
         const shortDesc = ad.description.substring(0, 45) + " ...";
         return (
-          <div key={ad.id} onClick={() => handleDelete(ad.id)}>
-            <div className="ad">
+         
+            <div className="ad-delete" onClick={() => handleDelete(ad.id)}>
               <div className="top">
                 <div className="head">
                   <img src={facebook} alt="facebook-logo" />
@@ -39,7 +40,7 @@ const Delete = (props) => {
                 className="like-img"
               />
             </div>
-          </div>
+        
         );
       })}
     </div>

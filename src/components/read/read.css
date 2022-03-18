@@ -67,3 +67,7 @@ h1{
     width: 6em;
     font-weight:500;
 }
+.buy-button:active{
+    transform: scale(0.95);
+   
+}
