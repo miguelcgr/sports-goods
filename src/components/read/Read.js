@@ -7,30 +7,39 @@ import "./read.css";
 const Read = (props) => {
   const { id } = useParams();
 
-  const { facebookAds } = props;
+  const { facebookAds, deleteAd } = props;
 
   const productAds = facebookAds.filter((ad) => ad.productId === id);
 
+  const handleDelete = (id) => {
+   if(window.confirm("This action will delete the ad. Are you sure?"))
+   deleteAd(id)
+  };
+
+  const handleEdit = (id) => {
+    console.log('editing')
+  }
+
   return (
     <>
-      {productAds.map((ad, index) => {
-        const shortDesc = ad.description.substring(0, 45) + " ...";
+      {productAds.map(({ description, web, name, image, id }, index) => {
+        const shortDesc = description.substring(0, 45) + " ...";
         return (
           <div key={index} className="read-container">
             <div className="ad">
               <div className="top">
                 <div className="head">
                   <img src={facebook} alt="facebook-logo" />
-                  <p className="facebook-text">{ad.web}</p>
+                  <p className="facebook-text">{web}</p>
                 </div>
-                <p className="product-intro">Check out our {ad.name}</p>
+                <p className="product-intro">Check out our {name}</p>
               </div>
 
-              <img className="product-img" src={ad.image} alt="product pic" />
+              <img className="product-img" src={image} alt="product pic" />
               <div className="under-info">
                 <div className="under-text">
-                  <p className="gray-link">{ad.web}</p>
-                  <p className="info-title">Check out our {ad.name}</p>
+                  <p className="gray-link">{web}</p>
+                  <p className="info-title">Check out our {name}</p>
                   <p className="ad-desc">{shortDesc}</p>
                 </div>
                 <button className="buy-button">Buy now</button>
@@ -41,6 +50,13 @@ const Read = (props) => {
                 className="like-img"
               />
             </div>
+            <button
+              className="delete-button"
+              onClick={() => handleDelete(id)}
+            >
+              Delete
+            </button>
+            <button className="edit-button" onClick={()=> handleEdit(id)}>Edit</button>
           </div>
         );
       })}
@@ -49,3 +65,16 @@ const Read = (props) => {
 };
 
 export default Read;
+
+/**
+        onClick={() => {
+                if (
+                  window.confirm(
+                    "This action will delete the ad. Are you sure?"
+                  )
+                ) {
+                  handleDelete(id);
+                }
+              }}
+ * 
+ */

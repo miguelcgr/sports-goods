@@ -1,4 +1,3 @@
-import React from "react";
 import data from "./products.json";
 import { v4 as uuid } from "uuid";
 
@@ -14,6 +13,8 @@ data.products.forEach((product) => {
   ad.web = product.web;
   ad.productId = product.id;
   advertisements.push(ad);
-});
+}); 
 
 export default advertisements;
+
+

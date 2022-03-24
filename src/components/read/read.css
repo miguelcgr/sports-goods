@@ -70,3 +70,25 @@ h1 {
 .buy-button:active {
   transform: scale(0.95);
 }
+.edit-button {
+  background-color: #2ebfa5;
+  border: 1px solid gray;
+  border-radius: 0.5em;
+  height: 3em;
+  width: 6em;
+  font-weight: 500;
+}
+.edit-button:active {
+  transform: scale(0.95);
+}
+.delete-button {
+  background-color: #2ebfa5;
+  border: 1px solid gray;
+  border-radius: 0.5em;
+  height: 3em;
+  width: 6em;
+  font-weight: 500;
+}
+.delete-button:active {
+  transform: scale(0.95);
+}

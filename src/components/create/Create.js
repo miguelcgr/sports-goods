@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./create.css";
 
 const Create = (props) => {
@@ -14,7 +14,7 @@ const Create = (props) => {
   const handleProductSelection = (event) => {
     const selectedProduct = products.products.filter(
       (el) => el.productName === event.target.value
-    );
+    )
     setProductId(selectedProduct[0].id);
   };
 
@@ -29,6 +29,7 @@ const Create = (props) => {
         <h2>Create an ad for your products</h2>
 
         <input
+          required
           type="text"
           name="name"
           placeholder="Product name"
@@ -62,7 +63,7 @@ const Create = (props) => {
           onChange={(event) => setWebsite(event.target.value)}
         />
 
-        {/* <select onChange={(event) => setProduct(event.target.value)}> */}
+    
         <select onChange={(event) => handleProductSelection(event)}>
           <option defaultValue hidden>
             Choose which product you are advertising

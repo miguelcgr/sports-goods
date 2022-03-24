@@ -22,9 +22,8 @@ const App = () => {
     newAd.price = price;
     newAd.web = website;
     newAd.productId = productId;
-    setFacebookAds((prevAds) => {
-      return [...prevAds, newAd];
-    });
+
+    setFacebookAds([...facebookAds, newAd]);
   };
   const deleteAd = (id) => {
     const remainingAds = facebookAds.filter((element) => element.id !== id);
@@ -41,7 +40,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route
               path="/read/:id"
-              element={<Read facebookAds={facebookAds} />}
+              element={<Read facebookAds={facebookAds} deleteAd={deleteAd}/>}
             />
             <Route
               path="/create"
