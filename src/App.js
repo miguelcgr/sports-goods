@@ -13,22 +13,37 @@ const App = () => {
   const [facebookAds, setFacebookAds] = useState(advertisements);
 
   const insertNewAd = (name, description, image, price, website, productId) => {
-    let newAd = {};
     const unique_id = uuid();
-    newAd.id = unique_id;
-    newAd.name = name;
-    newAd.image = image;
-    newAd.description = description;
-    newAd.price = price;
-    newAd.web = website;
-    newAd.productId = productId;
-
+    let newAd = {
+      id: unique_id,
+      name,
+      image,
+      description,
+      price,
+      web: website,
+      productId
+    }
     setFacebookAds([...facebookAds, newAd]);
   };
   const deleteAd = (id) => {
     const remainingAds = facebookAds.filter((element) => element.id !== id);
     setFacebookAds(remainingAds);
   };
+
+  const updateAd = (id, name, description, image, price, website, productId) => {
+  
+    const updatedAd = {
+      id,
+      name,
+      image,
+      description,
+      price,
+      web: website,
+      productId
+    }
+
+  setFacebookAds(facebookAds.map((ad) => (ad.id === id ? updatedAd : ad)))
+  }
 
   return (
     <div>
@@ -40,7 +55,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route
               path="/read/:id"
-              element={<Read facebookAds={facebookAds} deleteAd={deleteAd}/>}
+              element={<Read facebookAds={facebookAds} deleteAd={deleteAd} updateAd={updateAd} />}
             />
             <Route
               path="/create"

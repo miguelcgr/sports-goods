@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router";
 import facebook from "./../../facebook.png";
 import like from "./../../like-comment.png";
+import Form from './../form/Form'
 import "./read.css";
 
 const Read = (props) => {
+
+  const [isEditing, setIsEditing] = useState(false)
+
   const { id } = useParams();
 
-  const { facebookAds, deleteAd } = props;
+  const { facebookAds, deleteAd, updateAd } = props;
 
   const productAds = facebookAds.filter((ad) => ad.productId === id);
 
@@ -17,9 +21,10 @@ const Read = (props) => {
   };
 
   const handleEdit = (id) => {
-    console.log('editing')
+    setIsEditing(!isEditing)
+    updateAd(      id,)
   }
-
+console.log(isEditing)
   return (
     <>
       {productAds.map(({ description, web, name, image, id }, index) => {
@@ -56,10 +61,11 @@ const Read = (props) => {
             >
               Delete
             </button>
-            <button className="edit-button" onClick={()=> handleEdit(id)}>Edit</button>
+            <button className="edit-button" onClick={()=>setIsEditing(!isEditing)}>Edit</button>
           </div>
         );
       })}
+      {isEditing && <Form id={id} facebookAds={facebookAds} updateAd={updateAd} />}
     </>
   );
 };
