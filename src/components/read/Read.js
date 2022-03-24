@@ -66,15 +66,3 @@ const Read = (props) => {
 
 export default Read;
 
-/**
-        onClick={() => {
-                if (
-                  window.confirm(
-                    "This action will delete the ad. Are you sure?"
-                  )
-                ) {
-                  handleDelete(id);
-                }
-              }}
- * 
- */
