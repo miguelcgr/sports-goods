@@ -41,8 +41,15 @@ const App = () => {
       web: website,
       productId
     }
+   const updatedAds = facebookAds.map((ad) => (ad.id === id ? updatedAd : ad))
 
-  setFacebookAds(facebookAds.map((ad) => (ad.id === id ? updatedAd : ad)))
+ 
+console.log('facebookAds', facebookAds)
+   console.log('updatedads', updatedAds)
+   
+  setFacebookAds(updatedAds)
+  
+  console.log('app.js facebookads after update', facebookAds)
   }
 
   return (

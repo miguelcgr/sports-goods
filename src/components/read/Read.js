@@ -9,22 +9,27 @@ const Read = (props) => {
 
   const [isEditing, setIsEditing] = useState(false)
 
-  const { id } = useParams();
+  const [adToBeEdited, setAdToBeEdited] = useState()
+
+  const { id: productId } = useParams();
+
 
   const { facebookAds, deleteAd, updateAd } = props;
 
-  const productAds = facebookAds.filter((ad) => ad.productId === id);
+  const productAds = facebookAds.filter((ad) => ad.productId === productId);
+
+
 
   const handleDelete = (id) => {
    if(window.confirm("This action will delete the ad. Are you sure?"))
    deleteAd(id)
   };
 
-  const handleEdit = (id) => {
-    setIsEditing(!isEditing)
-    updateAd(      id,)
+  const handleEdit = (id) => {  
+      setIsEditing(!isEditing)
+    setAdToBeEdited(id)
   }
-console.log(isEditing)
+
   return (
     <>
       {productAds.map(({ description, web, name, image, id }, index) => {
@@ -61,11 +66,12 @@ console.log(isEditing)
             >
               Delete
             </button>
-            <button className="edit-button" onClick={()=>setIsEditing(!isEditing)}>Edit</button>
+            <button className="edit-button" onClick={()=>handleEdit(id)}>Edit</button>
+           
           </div>
         );
       })}
-      {isEditing && <Form id={id} facebookAds={facebookAds} updateAd={updateAd} />}
+      {isEditing && <Form adId={adToBeEdited} facebookAds={facebookAds} updateAd={updateAd} />}
     </>
   );
 };
