@@ -5,8 +5,6 @@ import Index from "./components/index/Index";
 import Read from "./components/read/Read";
 import Navbar from "./components/navbar/Navbar";
 import Create from "./components/create/Create";
-import Delete from "./components/delete/Delete";
-import Update from "./components/update/Update";
 import data from "./data/products.json";
 import advertisements from "./data/Advertisements";
 const App = () => {
@@ -21,17 +19,27 @@ const App = () => {
       description,
       price,
       web: website,
-      productId
-    }
+      productId,
+    };
     setFacebookAds([...facebookAds, newAd]);
   };
+
   const deleteAd = (id) => {
     const remainingAds = facebookAds.filter((element) => element.id !== id);
     setFacebookAds(remainingAds);
   };
 
-  const updateAd = (id, name, description, image, price, website, productId) => {
-  
+  const updateAd = (
+    id,
+    name,
+    description,
+    image,
+    price,
+    website,
+    productId
+  ) => {
+    console.log("name", name);
+    console.log("updateAd");
     const updatedAd = {
       id,
       name,
@@ -39,18 +47,12 @@ const App = () => {
       description,
       price,
       web: website,
-      productId
-    }
-   const updatedAds = facebookAds.map((ad) => (ad.id === id ? updatedAd : ad))
+      productId,
+    };
+    const updatedAds = facebookAds.map((ad) => (ad.id === id ? updatedAd : ad));
 
- 
-console.log('facebookAds', facebookAds)
-   console.log('updatedads', updatedAds)
-   
-  setFacebookAds(updatedAds)
-  
-  console.log('app.js facebookads after update', facebookAds)
-  }
+    setFacebookAds(updatedAds);
+  };
 
   return (
     <div>
@@ -61,26 +63,18 @@ console.log('facebookAds', facebookAds)
           <Routes>
             <Route path="/" element={<Index />} />
             <Route
-              path="/read/:id"
-              element={<Read facebookAds={facebookAds} deleteAd={deleteAd} updateAd={updateAd} />}
-            />
-            <Route
-              path="/create"
-              element={<Create products={data} insertNewAd={insertNewAd} />}
-            />
-            <Route
-              path="/delete"
+              path="/ads/:id"
               element={
-                <Delete
-                  products={data}
+                <Read
                   facebookAds={facebookAds}
                   deleteAd={deleteAd}
+                  updateAd={updateAd}
                 />
               }
             />
             <Route
-              path="/update"
-              element={<Update products={data} facebookAds={facebookAds} />}
+              path="/new-ad"
+              element={<Create products={data} insertNewAd={insertNewAd} />}
             />
           </Routes>
         </Fragment>

@@ -16,20 +16,15 @@ const Form = (props) => {
   const [updatedProductId, setUpdatedProductId] = useState("");
 
 
-
-
-
-
   const handleProductSelection = (event) => {
-    //   const selectedProduct = products.products.filter(
-    //     (el) => el.productName === event.target.value
-    //   )
-    //   setProductId(selectedProduct[0].id);
+      const selectedProduct = products.products.filter(
+        (el) => el.productName === event.target.value
+      )
+      setUpdatedProductId(selectedProduct[0].id);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // insertNewAd(name, description, image, price, website, productId);
     updateAd(id, updatedName, description, image, price, web, productId);
   };
   return (

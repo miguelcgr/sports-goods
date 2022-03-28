@@ -14,7 +14,7 @@ const Index = () => {
           return (
             <div className="product-card" key={index}>
               <Link
-                to={`/read/${el.id}`}
+                to={`/ads/${el.id}`}
                 product={el}
                 className="link"
                 >

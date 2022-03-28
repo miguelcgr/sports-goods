@@ -14,16 +14,10 @@ const Navbar = () => {
       </div>
       <div className="nav-links">
         <NavLink to={"/"} activeclassname="active" className="link">
-          Index
+          Products
         </NavLink>
-        <NavLink to={"/create"} activeclassname="active" className="link">
+        <NavLink to={"/new-ad"} activeclassname="active" className="link">
           Create
-        </NavLink>
-        <NavLink to={"/update"} activeclassname="active" className="link">
-          Update
-        </NavLink>
-        <NavLink to={"/delete"} activeclassname="active" className="link">
-          Delete
         </NavLink>
       </div>
     </div>
