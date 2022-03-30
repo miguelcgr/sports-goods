@@ -1,6 +1,9 @@
+
 .read-container {
-  display: flex;
-  flex-wrap: wrap;
+
+  width: 25vw;  
+  
+
 }
 .facebook-text {
   color: #3b5998;
@@ -21,9 +24,11 @@ h1 {
   height: 7em;
 }
 .ad {
-  border: 1px solid rgb(197, 197, 197);
+  border: 1px solid rgb(197, 197, 197); 
   background-color: white;
   width: 25vw;
+ 
+
 }
 .head {
   display: flex;
@@ -69,6 +74,12 @@ h1 {
 }
 .buy-button:active {
   transform: scale(0.95);
+}
+
+.buttons{
+  width: 25vw;
+  display: flex;
+  justify-content: space-around;
 }
 .edit-button {
   background-color: #2ebfa5;

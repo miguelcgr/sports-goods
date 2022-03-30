@@ -2,36 +2,32 @@ import React, { useState } from "react";
 import { useParams } from "react-router";
 import facebook from "./../../facebook.png";
 import like from "./../../like-comment.png";
-import Form from './../form/Form'
+import Form from "./../form/Form";
 import "./read.css";
 
 const Read = (props) => {
+  const [isEditing, setIsEditing] = useState(false);
 
-  const [isEditing, setIsEditing] = useState(false)
-
-  const [adToBeEdited, setAdToBeEdited] = useState()
+  const [adToBeEdited, setAdToBeEdited] = useState();
 
   const { id: productId } = useParams();
-
 
   const { facebookAds, deleteAd, updateAd } = props;
 
   const productAds = facebookAds.filter((ad) => ad.productId === productId);
 
-
-
   const handleDelete = (id) => {
-   if(window.confirm("This action will delete the ad. Are you sure?"))
-   deleteAd(id)
+    if (window.confirm("This action will delete the ad. Are you sure?"))
+      deleteAd(id);
   };
 
-  const handleEdit = (id) => {  
-      setIsEditing(!isEditing)
-    setAdToBeEdited(id)
-  }
+  const handleEdit = (id) => {
+    setIsEditing(!isEditing);
+    setAdToBeEdited(id);
+  };
 
   return (
-    <>
+    <div className="wrapper">
       {productAds.map(({ description, web, name, image, id }, index) => {
         const shortDesc = description.substring(0, 45) + " ...";
         return (
@@ -60,21 +56,29 @@ const Read = (props) => {
                 className="like-img"
               />
             </div>
-            <button
-              className="delete-button"
-              onClick={() => handleDelete(id)}
-            >
-              Delete
-            </button>
-            <button className="edit-button" onClick={()=>handleEdit(id)}>Edit</button>
-           
+            <div className="buttons">
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(id)}
+              >
+                Delete
+              </button>
+              <button className="edit-button" onClick={() => handleEdit(id)}>
+                Edit
+              </button>
+            </div>
           </div>
         );
       })}
-      {isEditing && <Form adId={adToBeEdited} facebookAds={facebookAds} updateAd={updateAd} />}
-    </>
+      {isEditing && (
+        <Form
+          adId={adToBeEdited}
+          facebookAds={facebookAds}
+          updateAd={updateAd}
+        />
+      )}
+    </div>
   );
 };
 
 export default Read;
-
